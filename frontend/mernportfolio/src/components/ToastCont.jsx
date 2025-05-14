@@ -2,7 +2,6 @@ import React from 'react'
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 function ToastCont() {
 
-  console.log('ToastCont')
   return (
     <ToastContainer
       position="top-right"

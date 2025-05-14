@@ -31,7 +31,6 @@ function AboutUp() {
     if (inputsval) {
 
       axios.put(`${apikey}/about`, { about: inputsval }).then(response => {
-        console.log(response.data);
         maintost("About page update Successfully", "success");
         setstateUpDb(true)
       })
@@ -51,14 +50,12 @@ function AboutUp() {
 
 
   useEffect(() => {
-    console.log(updatingmodel == 'About' && passwordsuccess)
     if (updatingmodel === 'About' && passwordsuccess) {
       setIsOpen(true);
     }
   }, [passwordsuccess])
 
 
-  console.log(updatingmodel, 'About')
 
   if (updatingmodel == 'About' && passwordsuccess) {
 

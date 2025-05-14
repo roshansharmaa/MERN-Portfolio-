@@ -19,13 +19,11 @@ function Menuemodel() {
   }
 
   let buttonsarr = ['Home', 'About', 'Skills', 'Projecs']
-  // console.log(updatingmodel)
   return (
     <div>
       <div className="admin" onClick={openModal}><a href="#admin">Admin</a></div>
       <Modal
         isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         ariaHideApp={false}

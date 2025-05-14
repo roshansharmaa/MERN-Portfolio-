@@ -33,7 +33,6 @@ function PasswordUp() {
     if (inputsval.pass && inputsval.cnfpass) {
 
       axios.put(`${apikey}/updatepass`, { confpass: inputsval.pass, password: inputsval.cnfpass }).then(response => {
-        console.log(response.data);
         maintost("Password update Successfully", "success");
         setstateUpDb(true)
       })
@@ -53,14 +52,12 @@ function PasswordUp() {
 
 
   useEffect(() => {
-    console.log(updatingmodel == 'Password' && passwordsuccess)
     if (updatingmodel === 'Password' && passwordsuccess) {
       setIsOpen(true);
     }
   }, [passwordsuccess])
 
 
-  console.log(updatingmodel, 'Password')
 
   if (updatingmodel == 'Password' && passwordsuccess) {
 

@@ -26,14 +26,12 @@ function SkillsUp() {
 
 
   useEffect(() => {
-    console.log(updatingmodel == 'Skills' && passwordsuccess)
     if (updatingmodel === 'Skills' && passwordsuccess) {
       setIsOpen(true);
     }
   }, [passwordsuccess])
 
 
-  console.log(updatingmodel, 'Skills')
 
 
   const handlesubmit = () => {

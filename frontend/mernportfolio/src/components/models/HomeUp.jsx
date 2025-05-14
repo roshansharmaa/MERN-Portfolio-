@@ -34,7 +34,6 @@ function HomeUp() {
     setIsOpen(false);
   }
   useEffect(() => {
-    console.log(passwordsuccess)
     if (updatingmodel === 'Home' && passwordsuccess) {
       setIsOpen(true);
     }
@@ -45,7 +44,6 @@ function HomeUp() {
 
     axios.get(apikey + "/home").then((res) => {
       setdata(res.data)
-      console.log(res.data)
     }).catch((err) => {
       seterror(err)
     })
@@ -58,7 +56,6 @@ function HomeUp() {
     // if (inputsval.lineone && inputsval.name && inputsval.decription && inputsval.profileurl && inputsval.role && inputsval.cvurl) {
 
     axios.put(`${apikey}/home`, { lineone: inputsval.lineone, name: inputsval.name, role: inputsval.role, profileurl: inputsval.profileurl, decription: inputsval.decription, cvurl: inputsval.cvurl }).then(response => {
-      console.log(response.data);
       maintost("Home page update Successfully", "success");
       setstateUpDb(true)
     })
@@ -78,7 +75,6 @@ function HomeUp() {
     datafun()
   }, [inputsval])
 
-  console.log(updatingmodel, "Hello")
 
   if (updatingmodel == 'Home' && passwordsuccess) {
     return (

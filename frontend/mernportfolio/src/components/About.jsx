@@ -16,13 +16,11 @@ function About() {
 
     axios.get(apikey + "/about").then((res) => {
       setdata(res.data)
-      // console.log(res.data)
     }).catch((err) => {
       seterror(err)
     })
   }
 
-  // console.log(data)
   useEffect(() => { datafun() }, [stateUpDb])
 
   return (

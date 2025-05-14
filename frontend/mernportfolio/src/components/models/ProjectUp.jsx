@@ -19,7 +19,6 @@ function ProjectUp() {
     if (inputsval.pjimg && inputsval.pjname && inputsval.pjdec && inputsval.liveurl && inputsval.giturl) {
 
       axios.post(`${apikey}/projects`, { imageurl: inputsval.pjimg, prjname: inputsval.pjname, prjdec: inputsval.pjdec, liveurl: inputsval.liveurl, giturl: inputsval.giturl }).then(response => {
-        console.log(response.data);
         maintost("Project Added Successfully", "success");
         setstateUpDb(true)
       })
@@ -51,7 +50,6 @@ function ProjectUp() {
 
 
   useEffect(() => {
-    console.log(updatingmodel == 'Projecs' && passwordsuccess)
     if (updatingmodel === 'Projecs' && passwordsuccess) {
       setIsOpen(true);
     }

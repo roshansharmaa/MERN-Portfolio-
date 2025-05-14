@@ -13,14 +13,11 @@ function Skills() {
 
     axios.get(apikey + "/skill").then((res) => {
       setdata(res.data)
-      // console.log(res.data.findall)
     }).catch((err) => {
       seterror(err)
     })
   }
 
-  // console.log(data.findall)
-  // console.log(data)
   useEffect(() => { datafun() }, [stateUpDb])
 
   return (

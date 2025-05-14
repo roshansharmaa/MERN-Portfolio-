@@ -21,13 +21,11 @@ function Varifymodel() {
 
     axios.get(apikey + "/verify").then((res) => {
       setdata(res.data)
-      console.log(res.data)
     }).catch((err) => {
       seterror(err)
     })
   }
 
-  // console.log(data)
   useEffect(() => { datafun() }, [])
 
 
@@ -49,12 +47,10 @@ function Varifymodel() {
     }
     if (data?.pass == inpval) {
       setpasswordsuccess(true)
-      console.log("success", data?.pass)
       setinpval('')
       maintost('Verification Success', 'success')
 
     } else {
-      console.log('error', data)
       maintost('Pasword dos not match', 'error')
 
     }
@@ -62,11 +58,9 @@ function Varifymodel() {
 
 
   useEffect(() => {
-    console.log(updatingmodel)
     updatingmodel ? setIsOpen(true) : ''
   }, [updatingmodel])
 
-  // console.log(updatingmodel)
   return (
     <div>
       {/* <button >Open Modal</button> */}

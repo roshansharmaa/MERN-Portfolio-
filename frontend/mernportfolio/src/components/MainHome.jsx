@@ -13,7 +13,6 @@ function MainHome() {
 
     axios.get(apikey + "/home").then((res) => {
       setdata(res.data)
-      console.log(res.data)
     }).catch((err) => {
       seterror(err)
     })

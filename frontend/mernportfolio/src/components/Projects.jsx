@@ -17,13 +17,11 @@ function Projects() {
 
     axios.get(apikey + "/projects").then((res) => {
       setdata(res.data)
-      console.log(res.data.findall)
     }).catch((err) => {
       seterror(err)
     })
   }
 
-  // console.log(data)
   useEffect(() => { datafun() }, [stateUpDb])
 
   return (
