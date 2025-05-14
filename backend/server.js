@@ -10,14 +10,20 @@ import Password from "./db/password.model.js";
 const app = express();
 
 const port = 5000;
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://mern-portfolio-roshan.netlify.app"],
+    methods: [post, get, put],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
 dotenv.config();
 
 app.get("/", (req, res) => {
-  res.send({ ji: "HO" });
+  res.send({ hi: "Backend is running" });
 });
 
 app.put("/home", async (req, res) => {
@@ -71,7 +77,7 @@ app.get("/about", async (req, res) => {
 
     res.send({ findall, error: false });
   } catch (err) {
-    res.send({ err: err, error: false });
+    res.send({ err: err, error: true });
   }
 });
 
